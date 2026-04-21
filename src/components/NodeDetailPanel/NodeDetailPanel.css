@@ -1,0 +1,79 @@
+.detail-drawer .ant-drawer-header {
+  background: #141414;
+  border-bottom: 1px solid #303030;
+}
+
+.detail-drawer .ant-drawer-title {
+  color: #fff;
+  font-size: 14px;
+}
+
+.detail-drawer .ant-drawer-body {
+  background: #141414;
+  padding: 16px;
+}
+
+.detail-drawer .ant-drawer-close {
+  color: #aaa;
+}
+
+.detail-loading {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.detail-markdown {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.detail-markdown h2 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 8px;
+}
+
+.detail-markdown h3 {
+  color: #eee;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.detail-markdown p {
+  margin-bottom: 8px;
+}
+
+.detail-markdown strong {
+  color: #fff;
+}
+
+.detail-markdown ul {
+  padding-left: 16px;
+  margin-bottom: 8px;
+}
+
+.detail-markdown li {
+  margin-bottom: 4px;
+}
+
+.detail-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.detail-markdown th,
+.detail-markdown td {
+  border: 1px solid #333;
+  padding: 4px 8px;
+  text-align: left;
+}
+
+.detail-markdown th {
+  background: #222;
+  color: #fff;
+}

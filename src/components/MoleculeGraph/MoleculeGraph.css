@@ -1,0 +1,10 @@
+.molecule-graph {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 0;
+}
+
+.molecule-graph canvas {
+  display: block;
+}

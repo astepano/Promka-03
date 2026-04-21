@@ -1,0 +1,56 @@
+.help-btn {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  background: rgba(30, 30, 30, 0.85) !important;
+  border: 1px solid #444 !important;
+  color: #aaa !important;
+  font-size: 14px !important;
+  backdrop-filter: blur(4px);
+}
+
+.help-btn:hover {
+  background: rgba(60, 60, 60, 0.9) !important;
+  color: #fff !important;
+}
+
+.help-modal .ant-modal-content {
+  background: #141414;
+  border: 1px solid #333;
+}
+
+.help-modal .ant-modal-header {
+  background: #141414;
+  border-bottom: 1px solid #333;
+}
+
+.help-modal .ant-modal-title {
+  color: #fff;
+}
+
+.help-modal .ant-modal-close-x {
+  color: #aaa;
+}
+
+.help-content {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.help-content h4 {
+  color: #fff;
+  margin: 12px 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.help-item {
+  margin: 2px 0;
+  padding-left: 4px;
+}

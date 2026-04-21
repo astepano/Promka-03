@@ -1,0 +1,76 @@
+.timeline-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(6px);
+  padding: 8px 48px 12px;
+  border-top: 1px solid #222;
+}
+
+.timeline-scenario {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.timeline-label {
+  color: #aaa;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.scenario-btn {
+  font-size: 12px;
+  border-color: #444 !important;
+  color: #888 !important;
+  background: transparent !important;
+}
+
+.scenario-btn.ant-radio-button-wrapper-checked.scenario-pessimistic {
+  background: #cc2a2a !important;
+  border-color: #cc2a2a !important;
+  color: #fff !important;
+}
+
+.scenario-btn.ant-radio-button-wrapper-checked.scenario-neutral {
+  background: #555 !important;
+  border-color: #555 !important;
+  color: #fff !important;
+}
+
+.scenario-btn.ant-radio-button-wrapper-checked.scenario-optimistic {
+  background: #e07b00 !important;
+  border-color: #e07b00 !important;
+  color: #fff !important;
+}
+
+.timeline-slider {
+  margin: 0;
+}
+
+.timeline-slider .ant-slider-rail {
+  background: #333;
+}
+
+.timeline-slider .ant-slider-track {
+  background: #1677ff;
+}
+
+.timeline-slider .ant-slider-handle::after {
+  box-shadow: 0 0 0 2px #1677ff;
+  background: #fff;
+}
+
+.timeline-mark {
+  color: #888;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.timeline-slider .ant-slider-mark-text-active .timeline-mark {
+  color: #fff;
+}
