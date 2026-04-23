@@ -1,17 +1,12 @@
 import * as THREE from 'three'
 import SpriteText from 'three-spritetext'
 
-// Минимальная и максимальная толщина рёбер
 const LINK_WIDTH_MIN = 0.5
 const LINK_WIDTH_MAX = 8
 
 export function calcLinkWidth(value, maxValue) {
   if (!value || !maxValue) return LINK_WIDTH_MIN
   return LINK_WIDTH_MIN + (value / maxValue) * (LINK_WIDTH_MAX - LINK_WIDTH_MIN)
-}
-
-export function calcNodeSize(val) {
-  return Math.max(4, val)
 }
 
 export function getNodeColor(type) {
@@ -28,21 +23,19 @@ export function getNodeColor(type) {
   return map[type] || '#888888'
 }
 
-// Three.js объект для узла
 export function makeNodeObject(node) {
-  const group = new THREE.Group()
-
+  const group  = new THREE.Group()
   const radius = Math.max(3, node.val * 0.8)
-  const geo    = new THREE.SphereGeometry(radius, 32, 32)
-  const mat    = new THREE.MeshLambertMaterial({
+
+  // MeshBasicMaterial не требует источника света
+  const mat = new THREE.MeshBasicMaterial({
     color: node.color || getNodeColor(node.type),
     transparent: true,
     opacity: 0.92,
   })
-  const mesh = new THREE.Mesh(geo, mat)
+  const mesh = new THREE.Mesh(new THREE.SphereGeometry(radius, 32, 32), mat)
   group.add(mesh)
 
-  // Текстовая метка поверх сферы (только для не-сателлитов)
   if (node.label) {
     const sprite = new SpriteText(node.label)
     sprite.color = '#ffffff'
@@ -51,22 +44,19 @@ export function makeNodeObject(node) {
     group.add(sprite)
   }
 
-  // Сохраняем радиус для расчёта столкновений
   node.__radius = radius
   return group
 }
 
-// Three.js объект для метки на ребре
+// Возвращает Group (не null) чтобы не крашить linkThreeObject
 export function makeLinkLabel(link) {
-  if (!link.label) return null
+  if (!link.label) return new THREE.Group()
   const sprite = new SpriteText(link.label)
   sprite.color = 'rgba(200,200,200,0.85)'
   sprite.textHeight = 2.8
-  sprite.backgroundColor = 'rgba(0,0,0,0)'
   return sprite
 }
 
-// Цвет ребра по весу
 export function getLinkColor(value, maxValue) {
   if (!value || !maxValue) return 'rgba(120,120,120,0.3)'
   const ratio = value / maxValue
