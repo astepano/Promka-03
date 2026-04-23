@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getMockGraph } from '../mocks/graphData.js'
+import { getMockGraph, NODE_DETAILS } from '../mocks/graphData.js'
 
 const client = axios.create({
   baseURL: import.meta.env.VITE_API_URL || '',
@@ -17,7 +17,6 @@ export async function getGraph(date, scenario) {
 
 export async function getNodeDetail(id) {
   if (!import.meta.env.VITE_API_URL) {
-    const { NODE_DETAILS } = await import('../mocks/graphData.js')
     return { markdown: NODE_DETAILS[id] || `## Узел ${id}\n\nДетальная информация недоступна.` }
   }
   const { data } = await client.get(`/api/nodes/${id}`)
